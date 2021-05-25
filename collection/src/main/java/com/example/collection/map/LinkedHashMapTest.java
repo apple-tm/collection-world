@@ -9,7 +9,7 @@ import java.util.Map;
  *
  * 1.extends HashMap
  * 2.底层数据结构为双向链表+hash 表
- * 3.插入有序（链表特性）
+ * 3.插入有序（链表特性） 想要 Map 有序使用
  * 4.两种顺序，默认插入顺序，还有一种访问顺序（get 元素后(结构性改变)，该元素被置于链表末尾）
  */
 public class LinkedHashMapTest {

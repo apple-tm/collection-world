@@ -3,6 +3,7 @@ package com.example.collection.java8;
 import java.time.Clock;
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.LongStream;
 
 /**
  * parallel 并行处理
@@ -20,9 +21,9 @@ public class ParallelArray {
     }
 
     public static void test() {
-        long[] longs = new long[120000];
-        Arrays.parallelSetAll(longs, e -> ThreadLocalRandom.current().nextLong(1000000));
-        Arrays.stream(longs).limit(10).forEach(e -> System.out.println(e));
+        long[] longs = new long[12000000];
+        Arrays.parallelSetAll(longs, e -> ThreadLocalRandom.current().nextLong(100000000));
+        LongStream longStream = Arrays.stream(longs).limit(10);
         long start = Clock.systemUTC().millis();
         Arrays.sort(longs);
         System.out.println(Clock.systemUTC().millis() - start);

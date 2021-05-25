@@ -3,7 +3,6 @@ package com.example.collection.set;
 import com.example.collection.User;
 
 import java.util.Set;
-import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
  * CopyOnWriteArraySet

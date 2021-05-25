@@ -10,8 +10,8 @@ import java.util.*;
  * 1.put 第一个元素会触发resize系统会初始化一个长度为16（初始容量）的Node数组，像极了ArrayList的初始化。
  * 2.负载因子默认 0.75，map 的 size大于 map 容量*负载因子，map 的容量会扩充为之前的 2 倍（为了减少 Hash 冲突）
  * 3.bin单链表 -> 红黑tree 需要 map 容量最小 64 和添加一个 entry 后 Hash 链表的长度等于 8
- * 4.红黑tree->bin单链表,删除一个元素时红黑 tree的长度为 6，转成长度为 5 的单链表
- * 5.Hashtable（默认容量 11）：线程安全，它不允许key和value为null（hashmap key 和 value 可以为 null），使用ConcurrentHashMap替换
+ * 4.红黑tree->bin单链表,删除一个元素时红黑 tree的节点数为 6，转成长度为 5 的单链表
+ * 5.Hashtable（默认容量 11）：扩容（2 倍+1）线程安全，它不允许key和value为null（hashmap key 和 value 可以为 null），使用ConcurrentHashMap替换
  * 6.map 的容量必须为 2 的整数次幂，扩容为原来的 2 倍
  */
 public class HashMapTest {

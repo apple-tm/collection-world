@@ -7,14 +7,24 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 public class ArrayListTest {
 
+    private int cursor;
+
     public static void main(String[] args) {
-        test();
+        ArrayListTest arrayListTest = new ArrayListTest();
+        arrayListTest.test();
     }
 
-    public static void test() {
+    public void test() {
+        int i = cursor;
+
+        int[] a = {1, 4, 7};
+        int j = -1;
+        int k = a[j = i];
+
         // 1.这两个空数组的容器数组不相同
         List<User> userList = new ArrayList<>();
         List<User> userList2 = new ArrayList<>(0);
@@ -34,6 +44,10 @@ public class ArrayListTest {
         System.out.println(userList.size());
         // 6.线程安全转换Collections.synchronizedList(List)
         List<User> user4 = Collections.synchronizedList(userList);
+
+        // 7.ListIterator可以往前遍历，添加元素，设置元素
+        ListIterator<User> userListIterator = userList.listIterator();
+
     }
 }
 

@@ -22,11 +22,14 @@ public class LambdaTest {
 //            System.out.println(2);
 //            System.out.println(e);
 //        });
-//        // 5.lambda表达式引用成员变量和局部变量隐式转换为 final 修饰
-//        String separator = ",";
-//        Arrays.asList("a", "b", "d").forEach((String e) -> {
-//            System.out.println(e+separator);
-//        });
+        // 5.lambda表达式引用成员变量和局部变量隐式转换为 final 修饰
+        String separator = ",";
+//        int i=0;
+        Arrays.asList("a", "b", "d").forEach((String e) -> {
+//            编译报错
+//            i++;
+            System.out.println(e+separator);
+        });
 
 //        // 6.表达式返回值编译器可以得出，表达式只有一行可以不写 return
 //        Arrays.asList("a", "e", "d").sort((String e1,String e2) -> e1.compareTo(e2));
